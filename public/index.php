@@ -21,8 +21,8 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
-require __DIR__.'/../vendor/autoload.php';
-
+// require __DIR__.'/../vendor/autoload.php';
+require '/home/albarista/tukubou.com/TypeLaraVue/vendor/autoload.php';
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights
@@ -35,7 +35,8 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/../bootstrap/app.php';
+// $app = require_once __DIR__.'/../bootstrap/app.php';
+$app = require_once '/home/albarista/tukubou.com/TypeLaraVue/bootstrap/app.php';
 
 /*
 |--------------------------------------------------------------------------
