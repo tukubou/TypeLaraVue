@@ -11,7 +11,14 @@
 |
 */
 
-$app = new Illuminate\Foundation\Application(
+/**
+ * ローカル環境の設定
+ * $app = new Illuminate\Foundation\Application(
+ *  realpath(__DIR__.'/../')
+ * );
+ */
+// サーバ環境の設定
+$app = new App\Application(
     realpath(__DIR__.'/../')
 );
 
