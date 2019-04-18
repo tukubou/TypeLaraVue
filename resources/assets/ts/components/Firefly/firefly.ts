@@ -1,4 +1,4 @@
-import { getParentSize } from './utils';
+import { getParentSize } from '../../utils';
 // 蛍オブジェクト
 export default class Firefly {
     ctx: any;
@@ -35,6 +35,27 @@ export default class Firefly {
         this.path = [];
         this.FlySizeWidth = 20; //ホタルの大きさの幅
     }
+    // set blur(name: string) {
+    // }
+    set sleepCount(sleepCount:number) {
+        this.SLEEP_COUNT = sleepCount;// default:200
+    }
+    set alphaSpeed(floatNumber:number) {
+        this.delta_alpha = floatNumber;// default:0.01
+    }
+    set speed(floatNumber:number) {
+        this.time = floatNumber; //起動変数t default:0.1
+    }
+    set rgba(color:any) {
+        this.alpha = color.a;
+        // default: 232, 250, 26, 0.1
+        this.color = `rgba(${color.r},${color.g},${color.b},${this.alpha})`;
+    }
+    set flySize(size:number) {
+        this.FlySizeWidth = 20; //ホタルの大きさの幅 default:20
+    }
+
+
 
     init() {
         //vecはサークルが左右どちらから発射される か
