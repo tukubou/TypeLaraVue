@@ -1,29 +1,60 @@
-import './bootstrap'
+import 'bootstrap'
+import * as $ from 'jquery';
 import Vue from 'vue'
+import VueX from 'vuex'
+import BootstrapVue from 'bootstrap-vue'
 import VueRouter from "vue-router"
-import ExampleComponent from './components/ExampleComponent.vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+// Component
 import Header from "./components/Header.vue"
-import Settings from "./components/Settings.vue"
-import BookIndex from "./components/Books/Index.vue"
-import BookShow from "./components/Books/Show.vue"
-import Firefly from "./components/Firefly.vue"
-import BGMSettings from "./components/BGMSettings.vue"
-import BGISettings from "./components/BGISettings.vue"
+import Footer from "./components/Footer.vue"
+
+import Home from "./components/Home.vue"
+import Firefly from "./components/Firefly/Firefly.vue"
+import Profile from "./components/Profile.vue"
+import Hobbies from "./components/Hobbies.vue"
+import Drone from "./components/Drone.vue"
+import ODM from "./components/ODM.vue"
+
 Vue.use(VueRouter);
+Vue.use(BootstrapVue);
+Vue.use(VueX);
+// 『イベントバス』のためのインスタンス
 Vue.component("vue-header", Header);
+Vue.component("vue-footer", Footer);
+
+/**
+ * storeオブジェクト
+ * messageを保持
+ * messageの値を書き換える以下の2つのメソッドも用意
+ * changeMessage()
+ * resetMessage()
+ */
+const store = new VueX.Store({
+    state: {
+      message: 'homeMessage',
+      isShowModal :false,
+      curPage: 'home'
+    }
+});
 
 const router = new VueRouter({
-    mode: "history",
+    // mode: "history",
     routes: [
-        { path: "/settings", component: Settings },
-        { path: "/books", component: BookIndex },
-        { path: "/books/:id", component: BookShow },
+        { path: "/", component: Home },
+        { path: "/home", component: Home },
+        { path: "/profile", component: Profile },
+        { path: "/hobbies", component: Hobbies },
+        { path: "/drone", component: Drone },
+        { path: "/odm", component: ODM },
         { path: "/firefly", component: Firefly },
-        { path: "/bgm", component: BGMSettings },
-        { path: "/bgi", component: BGISettings },
     ]
 });
+
 new Vue({
     router,
+    store,
     el: '#app'
 });
