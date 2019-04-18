@@ -8,6 +8,8 @@
  */
 
 define('LARAVEL_START', microtime(true));
+// define('PROJECT_PATH', __DIR__.'/../vendor/autoload.php');
+define('PROJECT_PATH', '/home/albarista/techreis.jp/TypeLaraVue');
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +23,8 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
-// require __DIR__.'/../vendor/autoload.php';
-require '/home/albarista/tukubou.com/TypeLaraVue/vendor/autoload.php';
+
+require PROJECT_PATH.'/vendor/autoload.php';
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights
@@ -35,8 +37,7 @@ require '/home/albarista/tukubou.com/TypeLaraVue/vendor/autoload.php';
 |
 */
 
-// $app = require_once __DIR__.'/../bootstrap/app.php';
-$app = require_once '/home/albarista/tukubou.com/TypeLaraVue/bootstrap/app.php';
+$app = require_once PROJECT_PATH.'/bootstrap/app.php';
 
 /*
 |--------------------------------------------------------------------------
