@@ -55,6 +55,9 @@
         <li class="nav-item">
           <router-link to="/odm" class="nav-link">O.D.M</router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="/contact" class="nav-link">お問い合わせ</router-link>
+        </li>
         <!-- Fireflyの時だけ -->
         <li v-if="getPageName == 'firefly' || getPageName == 'fireflySettings'" class="nav-item">
           <a class="nav-link" @click="showFireflyModal">ホタルの設定</a>
