@@ -2,6 +2,9 @@ import 'bootstrap'
 import * as $ from 'jquery';
 import Vue from 'vue'
 import VueX from 'vuex'
+import axios from 'axios';
+Vue.prototype.$http = axios;
+
 import BootstrapVue from 'bootstrap-vue'
 import VueRouter from "vue-router"
 import 'bootstrap/dist/css/bootstrap.css'
@@ -17,6 +20,7 @@ import Profile from "./components/Profile.vue"
 import Hobbies from "./components/Hobbies.vue"
 import Drone from "./components/Drone.vue"
 import ODM from "./components/ODM.vue"
+import Contact from "./components/Contact.vue"
 
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
@@ -50,6 +54,7 @@ const router = new VueRouter({
         { path: "/drone", component: Drone },
         { path: "/odm", component: ODM },
         { path: "/firefly", component: Firefly },
+        { path: "/contact", component: Contact },
     ]
 });
 
