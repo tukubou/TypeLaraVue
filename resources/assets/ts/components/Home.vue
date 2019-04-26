@@ -33,20 +33,20 @@
         <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
-    <!-- START THE FEATURETTES -->
-    <hr class="featurette-divider">
-    <!-- /END THE FEATURETTES -->
   </div><!-- /.container -->
 </main>
 </template>
 
 <script lang="ts">
     import {Vue, Component} from 'vue-property-decorator'
+    import axios from 'axios';
     @Component
     export default class HomeComponent extends Vue {
-        mounted(): void {
-            this.$store.state.curPage = 'home'
-        }
+      mounted(): void {
+        this.$store.state.curPage = 'home'
+        //APIからAjaxでデータを取得するサンプル
+        axios.get('/api/articles').then(response => { console.log(response); });
+      }
     }
 </script>
 
@@ -57,10 +57,6 @@
   background-position: center 60%;
 }
 
-.video-wrap {
-  width:100%;
-  position: relative;
-}
 .topImage {
   width: 100%;
   height: 400px;
